@@ -50,7 +50,7 @@ RUN  curl -o /usr/local/bin/docker-compose -L "https://github.com/docker/compose
 WORKDIR /usr/local/src
 RUN wget https://github.com/tmux/tmux/releases/download/2.6/tmux-2.6.tar.gz
 RUN tar xzvf tmux-2.6.tar.gz
-WORKDIR /usr/local/src/tmux-2.5
+WORKDIR /usr/local/src/tmux-2.6
 RUN ./configure
 RUN make 
 RUN make install
