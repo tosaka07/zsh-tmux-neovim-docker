@@ -38,18 +38,18 @@ RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 581
       apt-get install -y apt-transport-https &&\
       apt-get update &&\
       apt-get install -y docker-engine
-RUN  curl -o /usr/local/bin/docker-compose -L "https://github.com/docker/compose/releases/download/1.13.0/docker-compose-$(uname -s)-$(uname -m)" &&\
+RUN  curl -o /usr/local/bin/docker-compose -L "https://github.com/docker/compose/releases/download/1.18.0/docker-compose-$(uname -s)-$(uname -m)" &&\
      chmod +x /usr/local/bin/docker-compose
 
 # Install go
-RUN add-apt-repository ppa:longsleep/golang-backports
-RUN apt-get update
-RUN apt-get install -y golang-1.8-go
+# RUN add-apt-repository ppa:longsleep/golang-backports
+# RUN apt-get update
+# RUN apt-get install -y golang-1.8-go
 
 # Install tmux
 WORKDIR /usr/local/src
-RUN wget https://github.com/tmux/tmux/releases/download/2.5/tmux-2.5.tar.gz
-RUN tar xzvf tmux-2.5.tar.gz
+RUN wget https://github.com/tmux/tmux/releases/download/2.6/tmux-2.6.tar.gz
+RUN tar xzvf tmux-2.6.tar.gz
 WORKDIR /usr/local/src/tmux-2.5
 RUN ./configure
 RUN make 
